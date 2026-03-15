@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHILA — Жіноча та дитяча мода</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --blue: #1a3a6b;
+      --blue-mid: #1e4d8c;
+      --blue-light: #2a6cbf;
+      --gold: #c9a84c;
+      --gold-light: #e8c96d;
+      --gold-pale: #f5e8b8;
+      --cream: #faf8f2;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      color: var(--gold-light);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    nav ul li a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border: none !important;
+      font-weight: 600 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1a4a8a 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: 100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42, 108, 191, 0.3) 0%, transparent 70%);
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold);
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 1px;
+      line-height: 1.8;
+      margin: 24px 0 40px;
+      max-width: 380px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 16px 36px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold-light);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .hero-img-block {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-img-block:first-child {
+      grid-row: span 2;
+    }
+
+    .mock-img {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mock-img-1 {
+      background: linear-gradient(180deg, #1e3a6e 0%, #0d2450 100%);
+    }
+
+    .mock-img-2 {
+      background: linear-gradient(180deg, #2a4a8a 0%, #162d5a 100%);
+    }
+
+    .mock-img-3 {
+      background: linear-gradient(180deg, #1a3868 0%, #0f2248 100%);
+    }
+
+    /* Silhouette figures */
+    .silhouette {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .figure-woman {
+      width: 60%;
+      max-width: 200px;
+      opacity: 0.6;
+    }
+
+    .figure-child {
+      width: 35%;
+      max-width: 120px;
+      opacity: 0.55;
+    }
+
+    .img-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+    }
+
+    /* PROMO BAND */
+    .promo-band {
+      background: var(--gold);
+      padding: 14px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .promo-scroll {
+      display: flex;
+      gap: 60px;
+      animation: scroll 20s linear infinite;
+      width: max-content;
+    }
+
+    .promo-band span {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .promo-sep {
+      color: var(--navy);
+      opacity: 0.4;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* COLLECTIONS */
+    .section {
+      padding: 100px 80px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 50px;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 480px;
+      gap: 16px;
+    }
+
+    .coll-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .coll-card:hover .coll-overlay {
+      opacity: 1;
+    }
+
+    .coll-card:hover .coll-img-bg {
+      transform: scale(1.04);
+    }
+
+    .coll-img-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+
+    .coll-bg-1 {
+      background: linear-gradient(160deg, #0d2450 0%, #1a3a7a 50%, #0a1a3a 100%);
+    }
+
+    .coll-bg-2 {
+      background: linear-gradient(160deg, #1a2d5a 0%, #2a4a8a 100%);
+    }
+
+    .coll-bg-3 {
+      background: linear-gradient(160deg, #0f2040 0%, #1e3868 100%);
+    }
+
+    /* Decorative shapes on cards */
+    .coll-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+
+    .shape-a {
+      width: 300px;
+      height: 300px;
+      background: var(--gold);
+      top: -80px;
+      right: -80px;
+    }
+
+    .shape-b {
+      width: 200px;
+      height: 200px;
+      background: var(--blue-light);
+      bottom: -60px;
+      left: -60px;
+    }
+
+    /* Mock figure on card */
+    .coll-figure {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55%;
+      opacity: 0.55;
+      display: flex;
+      justify-content: center;
+    }
+
+    .coll-figure-sm {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65%;
+      opacity: 0.55;
+    }
+
+    .coll-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 22, 40, 0.4);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coll-overlay-btn {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 12px 28px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .coll-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(10, 22, 40, 0.9));
+      padding: 50px 24px 24px;
+    }
+
+    .coll-cat {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .coll-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--white);
+    }
+
+    .coll-name-sm {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--white);
+    }
+
+    .coll-price {
+      font-size: 11px;
+      color: var(--gold-light);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* FEATURES */
+    .features-section {
+      background: var(--navy);
+      padding: 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      position: relative;
+    }
+
+    .features-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .feature-item {
+      padding: 50px 40px;
+      border-right: 1px solid rgba(201, 168, 76, 0.1);
+      position: relative;
+    }
+
+    .feature-item:last-child {
+      border-right: none;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    .feature-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 120px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40%;
+      background: url("data:image/svg+xml,%3Csvg width='400' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M200 0 L400 150 L400 600 L0 600 L0 150 Z' fill='rgba(201,168,76,0.05)'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+
+    .cta-text .section-label {
+      color: var(--gold-light);
+    }
+
+    .cta-text .section-title {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cta-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 400px;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 0;
+    }
+
+    .cta-input {
+      flex: 1;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-right: none;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      outline: none;
+    }
+
+    .cta-input::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .cta-submit {
+      padding: 16px 28px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.3s;
+    }
+
+    .cta-submit:hover {
+      background: var(--gold-light);
+    }
+
+    .cta-offer {
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 50px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 90px;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .offer-text {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+    }
+
+    .offer-code {
+      margin-top: 24px;
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px dashed var(--gold);
+      color: var(--gold-light);
+      font-size: 14px;
+      letter-spacing: 4px;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      color: var(--gold-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-right {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 1px;
+    }
+
+    /* ── Hero entrance ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-tag {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .hero h1 {
+      animation: fadeUp 0.9s 0.1s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-sub {
+      animation: fadeUp 0.9s 0.2s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-btns {
+      animation: fadeUp 0.9s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-stats {
+      animation: fadeUp 0.9s 0.4s ease forwards;
+      opacity: 0;
+    }
+
+    /* ── Scroll-reveal base ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.from-left {
+      transform: translateX(-50px);
+    }
+
+    .reveal.from-right {
+      transform: translateX(50px);
+    }
+
+    .reveal.scale-in {
+      transform: scale(0.88);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) translateX(0) scale(1);
+    }
+
+    .reveal.delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal.delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal.delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal.delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ── Feature icon hover pulse ── */
+    .feature-icon {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-item:hover .feature-icon {
+      transform: scale(1.15);
+      box-shadow: 0 0 18px rgba(201, 168, 76, 0.35);
+    }
+
+    /* ── Collection card image zoom on hover (smoother) ── */
+    .coll-img-bg {
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .coll-card:hover .coll-img-bg {
+      transform: scale(1.06);
+    }
+
+    /* ── Promo band hover pause ── */
+    .promo-band:hover .promo-scroll {
+      animation-play-state: paused;
+    }
+
+    /* ── Buttons ripple feel ── */
+    .btn-primary,
+    .btn-outline,
+    .cta-submit,
+    .coll-overlay-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after,
+    .btn-outline::after,
+    .cta-submit::after,
+    .coll-overlay-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .btn-primary:hover::after,
+    .btn-outline:hover::after,
+    .cta-submit:hover::after,
+    .coll-overlay-btn:hover::after {
+      opacity: 1;
+    }
+
+    /* ── Nav link underline slide ── */
+    nav ul li a {
+      position: relative;
+    }
+
+    nav ul li a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold-light);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:not(.nav-cta):hover::after {
+      width: 100%;
+    }
+
+    /* ── Stat number count-up flash ── */
+    @keyframes statPop {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+        color: #fff;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .stat-num.popped {
+      animation: statPop 0.5s ease;
+    }
+
+    /* Бургер скрытый по умолчанию на десктопе */
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* ════════════════════════════════
+       АДАПТИВ
+    ════════════════════════════════ */
+
+    /* ── Tablet 1024px ── */
+    @media (max-width: 1024px) {
+      nav { padding: 16px 32px; }
+      .hero-text { padding: 120px 36px 60px 36px; }
+      .hero h1 { font-size: 54px; }
+      .section { padding: 70px 40px; }
+      .section-title { font-size: 40px; }
+      .collections-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 320px 320px;
+      }
+      .coll-card:first-child { grid-column: span 2; }
+      .features-section { padding: 60px 40px; }
+      .feature-item { padding: 36px 24px; }
+      .cta-section { padding: 80px 40px; gap: 40px; }
+      footer { padding: 32px 40px; }
+    }
+
+    /* ── Mobile 768px ── */
+    @media (max-width: 768px) {
+      /* NAV */
+      nav { padding: 16px 20px; }
+
+      /* Меню-оверлей: скрыт по умолчанию через transform */
+      nav ul.nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 22, 40, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        z-index: 98;
+        /* Анимация: закрыто */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-16px);
+        transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+        padding-top: 70px;
+      }
+      nav ul.nav-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      nav ul.nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(201,168,76,0.1);
+      }
+      nav ul.nav-menu li:first-child {
+        border-top: 1px solid rgba(201,168,76,0.1);
+      }
+      nav ul.nav-menu li a {
+        display: block;
+        padding: 20px 40px;
+        font-size: 13px;
+        letter-spacing: 4px;
+        color: rgba(255,255,255,0.8);
+        transition: color 0.25s, background 0.25s;
+      }
+      nav ul.nav-menu li a:hover {
+        color: var(--gold-light);
+        background: rgba(201,168,76,0.07);
+      }
+      nav ul.nav-menu .nav-cta {
+        margin: 28px auto 0;
+        display: inline-block;
+        width: auto;
+        padding: 12px 36px !important;
+        font-size: 12px !important;
+      }
+
+      /* Бургер */
+      .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 101;
+        background: none;
+        border: none;
+      }
+      .burger span {
+        display: block;
+        width: 26px;
+        height: 1.5px;
+        background: var(--gold-light);
+        transition: transform 0.35s ease, opacity 0.35s ease, width 0.35s ease;
+        transform-origin: center;
+      }
+      .burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .burger.active span:nth-child(2) { opacity: 0; width: 0; }
+      .burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+      /* HERO */
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 100px 24px 40px; order: 1; }
+      .hero h1 { font-size: 42px; }
+      .hero-sub { font-size: 12px; max-width: 100%; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; }
+      .hero-stats { gap: 24px; margin-top: 36px; padding-top: 24px; }
+      .stat-num { font-size: 28px; }
+      .hero-visual { order: 2; height: 360px; }
+      .hero-img-grid { position: relative; height: 360px; }
+
+      /* COLLECTIONS */
+      .section { padding: 50px 20px; }
+      .section-title { font-size: 32px; }
+      .collections-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 270px 270px;
+      }
+      .coll-card:first-child { grid-column: span 1; }
+
+      /* FEATURES */
+      .features-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 50px 20px;
+        gap: 0;
+      }
+      .feature-item {
+        padding: 32px 18px;
+        border-right: none;
+        border-bottom: 1px solid rgba(201,168,76,0.1);
+      }
+      .feature-item:nth-child(odd) { border-right: 1px solid rgba(201,168,76,0.1); }
+      .feature-item:nth-last-child(-n+2) { border-bottom: none; }
+      .feature-name { font-size: 18px; }
+
+      /* CTA */
+      .cta-section {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 40px;
+      }
+      .cta-section .section-title { font-size: 30px !important; }
+      .cta-form { flex-direction: column; }
+      .cta-input { border-right: 1px solid rgba(201,168,76,0.3); border-bottom: none; }
+      .cta-offer { padding: 36px 24px; }
+      .offer-badge { font-size: 68px; }
+
+      /* FOOTER */
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 32px 24px;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+    }
+
+    /* ── Small mobile 480px ── */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 34px; }
+      .hero-tag { font-size: 9px; letter-spacing: 3px; }
+      .hero-visual { height: 260px; }
+      .hero-img-grid { height: 260px; }
+      .section-title { font-size: 26px; }
+      .collections-grid { grid-template-rows: 250px 230px 230px; }
+      .features-section { grid-template-columns: 1fr; }
+      .feature-item { border-right: none !important; border-bottom: 1px solid rgba(201,168,76,0.1) !important; }
+      .feature-item:last-child { border-bottom: none !important; }
+      .cta-section .section-title { font-size: 24px !important; }
+      .offer-badge { font-size: 54px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">SHILA</div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#" onclick="closeMenu()">Жіноча</a></li>
+      <li><a href="#" onclick="closeMenu()">Дитяча</a></li>
+      <li><a href="#" onclick="closeMenu()">Новинки</a></li>
+      <li><a href="#" onclick="closeMenu()">Про бренд</a></li>
+      <li><a href="#" class="nav-cta" onclick="closeMenu()">Каталог</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Меню" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="hero-tag">Нова колекція · Весна 2025</span>
+      <h1>Мода,<br>народжена<br><em>для вас</em></h1>
+      <p class="hero-sub">Вишукана жіноча та дитяча мода, створена з увагою до кожної деталі. Від повсякденного до
+        особливого.</p>
+      <div class="hero-btns">
+        <button class="btn-primary">Переглянути колекцію</button>
+        <button class="btn-outline">Дитяча мода →</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Моделей</div>
+        </div>
+        <div>
+          <div class="stat-num">15k</div>
+          <div class="stat-label">Клієнтів</div>
+        </div>
+        <div>
+          <div class="stat-num">12</div>
+          <div class="stat-label">Років на ринку</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-img-grid">
+        <div class="hero-img-block">
+          <div class="mock-img"
+            style="height:100%; background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.1) 60%), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&h=900&fit=crop&auto=format') center top / cover no-repeat;">
+            <div class="img-label">Жіноча колекція</div>
+          </div>
+        </div>
+        <div class="hero-img-block">
+          <div class="mock-img"
+            style="height:100%; background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.1) 60%), url('https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=400&h=600&fit=crop&auto=format') center top / cover no-repeat;">
+            <div class="img-label">Дитяча — Для дівчаток</div>
+          </div>
+        </div>
+        <div class="hero-img-block">
+          <div class="mock-img"
+            style="height:100%; background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.1) 60%), url('https://images.unsplash.com/photo-1555009393-f20bdb245c4d?w=400&h=600&fit=crop&auto=format') center top / cover no-repeat;">
+            <div class="img-label">Дитяча — Для хлопчиків</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BAND -->
+  <div class="promo-band">
+    <div style="overflow:hidden;">
+      <div class="promo-scroll">
+        <span>Безкоштовна доставка від 5000 грн</span><span class="promo-sep">◆</span>
+        <span>Нова весняна колекція</span><span class="promo-sep">◆</span>
+        <span>Знижка 20% на дитяче</span><span class="promo-sep">◆</span>
+        <span>Повернення протягом 30 днів</span><span class="promo-sep">◆</span>
+        <span>Безкоштовна доставка від 5000 грн</span><span class="promo-sep">◆</span>
+        <span>Нова весняна колекція</span><span class="promo-sep">◆</span>
+        <span>Знижка 20% на дитяче</span><span class="promo-sep">◆</span>
+        <span>Повернення протягом 30 днів</span><span class="promo-sep">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLECTIONS -->
+  <section class="section">
+    <div class="section-label reveal from-left">Наші колекції</div>
+    <div class="section-title reveal from-left delay-1">Обери <em
+        style="font-family:'Cormorant Garamond',serif;font-style:italic;">своє</em>
+    </div>
+    <div class="collections-grid">
+
+      <div class="coll-card reveal scale-in delay-1">
+        <div class="coll-img-bg"
+          style="background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.15) 55%), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&h=500&fit=crop&auto=format') center / cover no-repeat;">
+        </div>
+        <div class="coll-overlay"><button class="coll-overlay-btn">Відкрити каталог</button></div>
+        <div class="coll-info">
+          <div class="coll-cat">Жіноча мода</div>
+          <div class="coll-name">Весняна колекція 2025</div>
+          <div class="coll-price">890 грн</div>
+        </div>
+      </div>
+
+      <div class="coll-card reveal scale-in delay-2">
+        <div class="coll-img-bg"
+          style="background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.15) 55%), url('https://images.unsplash.com/photo-1476234251651-f353703a034d?w=400&h=500&fit=crop&auto=format') center / cover no-repeat;">
+        </div>
+        <div class="coll-overlay"><button class="coll-overlay-btn">Переглянути</button></div>
+        <div class="coll-info">
+          <div class="coll-cat">Для дівчаток</div>
+          <div class="coll-name-sm">Принцеси та казки</div>
+          <div class="coll-price">від 290 грн</div>
+        </div>
+      </div>
+
+      <div class="coll-card reveal scale-in delay-3">
+        <div class="coll-img-bg"
+          style="background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.15) 55%), url('https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=400&h=500&fit=crop&auto=format') center / cover no-repeat;">
+        </div>
+        <div class="coll-overlay"><button class="coll-overlay-btn">Переглянути</button></div>
+        <div class="coll-info">
+          <div class="coll-cat">Для хлопчиків</div>
+          <div class="coll-name-sm">Active & Style</div>
+          <div class="coll-price">від 290 грн</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="features-section">
+    <div class="feature-item reveal from-left delay-1">
+      <div class="feature-icon">
+        <!-- Scissors + fabric: Premium materials -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="6" r="3" />
+          <circle cx="6" cy="18" r="3" />
+          <line x1="20" y1="4" x2="8.12" y2="15.88" />
+          <line x1="14.47" y1="14.48" x2="20" y2="20" />
+          <line x1="8.12" y1="8.12" x2="12" y2="12" />
+        </svg>
+      </div>
+      <div class="feature-name">Преміум тканини</div>
+      <div class="feature-desc">Використовуємо лише сертифіковані матеріали, безпечні для дітей та дорослих</div>
+    </div>
+    <div class="feature-item reveal from-left delay-2">
+      <div class="feature-icon">
+        <!-- Pen + sparkle: Author design -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9" />
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+          <polyline points="15 5 19 9" />
+        </svg>
+      </div>
+      <div class="feature-name">Авторський дизайн</div>
+      <div class="feature-desc">Кожна модель — результат роботи наших дизайнерів. Жодних типових рішень</div>
+    </div>
+    <div class="feature-item reveal from-left delay-3">
+      <div class="feature-icon">
+        <!-- Box with arrow: Fast delivery -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10" />
+          <path d="M23 7H1l2-4h18l2 4z" />
+          <line x1="12" y1="3" x2="12" y2="21" />
+        </svg>
+      </div>
+      <div class="feature-name">Швидка доставка</div>
+      <div class="feature-desc">Доставимо замовлення за 1–3 дні по Україні. Безкоштовно від 5000 грн</div>
+    </div>
+    <div class="feature-item reveal from-left delay-4">
+      <div class="feature-icon">
+        <!-- Shield + check: Easy return guarantee -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.4"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
+      </div>
+      <div class="feature-name">Легке повернення</div>
+      <div class="feature-desc">Не підійшло? Повернемо гроші протягом 30 днів без питань</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-text">
+      <div class="section-label reveal from-left">Спеціальна пропозиція</div>
+      <div class="section-title reveal from-left delay-1" style="font-size:42px;">Отримай знижку<br>на перше замовлення
+      </div>
+      <p class="cta-desc reveal delay-2">Підпишіться на нашу розсилку та отримайте промокод на 15% знижку при першій
+        покупці. Нові
+        колекції, акції та закриті розпродажі — першими.</p>
+      <div class="cta-form reveal delay-3">
+        <input class="cta-input" type="email" placeholder="Ваш email">
+        <button class="cta-submit">Отримати →</button>
+      </div>
+    </div>
+    <div class="cta-offer reveal from-right">
+      <div class="offer-badge">−15%</div>
+      <div class="offer-text">На перше замовлення</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:16px;letter-spacing:1px;">Промокод надійде на
+        пошту</div>
+      <div class="offer-code">ELUME15</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <div class="footer-logo">SHILA</div>
+    <div class="footer-links">
+      <a href="#">Доставка</a>
+      <a href="#">Повернення</a>
+      <a href="#">Контакти</a>
+      <a href="#">Програма лояльності</a>
+    </div>
+    <div class="footer-right">© 2025 SHILA. Всі права захищені.</div>
+  </footer>
+
+  <script>
+    // ── Burger menu ──
+    function toggleMenu() {
+      const menu   = document.getElementById('navMenu');
+      const burger = document.getElementById('burger');
+      menu.classList.toggle('open');
+      burger.classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('navMenu').classList.remove('open');
+      document.getElementById('burger').classList.remove('active');
+    }
+    // Скрыть бургер на десктопе при ресайзе
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+
+    // ── Scroll-reveal via IntersectionObserver ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Stat counter animation ──
+    function animateCounter(el, target, suffix) {
+      const isK = suffix === 'k';
+      const end = isK ? parseFloat(target) * 1000 : parseInt(target);
+      const duration = 1400;
+      const step = end / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= end) {
+          current = end;
+          clearInterval(timer);
+        }
+        if (isK) {
+          el.textContent = (current / 1000).toFixed(current < end ? 1 : 0) + 'k';
+        } else if (suffix === '+') {
+          el.textContent = Math.floor(current) + '+';
+        } else {
+          el.textContent = Math.floor(current);
+        }
+      }, 16);
+      el.classList.add('popped');
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const nums = entry.target.querySelectorAll('.stat-num');
+          nums.forEach(num => {
+            const text = num.textContent.trim();
+            if (text.endsWith('+')) animateCounter(num, text.replace('+', ''), '+');
+            else if (text.endsWith('k')) animateCounter(num, text.replace('k', ''), 'k');
+            else animateCounter(num, text, '');
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsBlock = document.querySelector('.hero-stats');
+    if (statsBlock) statsObserver.observe(statsBlock);
+  </script>
+</body>
+
+</html>
